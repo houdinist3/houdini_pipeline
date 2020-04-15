@@ -51,20 +51,7 @@ class projectManager(QtWidgets.QWidget):
         self.setLayout(mainLayout)
 
     def setproject(self):
-        # #setjob = hou.ui.selectFromTree(tree_list, exclusive=True, message='Select a parameter to watch',
-        #                                title='Watchlist Select', clear_on_cancel=True)
-
-
-        getdir1 = "/Users/byungsoo/houdini_env/Work/sooway/"
-        dirlist = []
-        for subdir in os.listdir(getdir1):
-            dirlist.append(subdir)
-        users = hou.getenv('HIP') + "/"
-        setjob = hou.ui.selectFromList(users, exclusive=True, message="Please select the Node's owner",
-                                       title="Read User's nodes", column_header="Users")
-
-
-        #setjob = hou.ui.selectFile(title='set project', file_type=hou.fileType.Directory)
+        setjob = hou.ui.selectFile(title='set project', file_type=hou.fileType.Directory)
         hou.hscript('setenv JOB' + setjob)
 
         print setjob
