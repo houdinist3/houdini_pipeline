@@ -4,7 +4,7 @@ import sys
 # from hutil.Qt import QtWidgets
 from PySide2 import QtWidgets, QtUiTools, QtCore
 
-print 'hello TO'
+print('hello TO')
 
 class projectManager(QtWidgets.QWidget):
     def __init__(self):
@@ -86,14 +86,14 @@ class projectManager(QtWidgets.QWidget):
 
 
     def openScene(self, item):
-        print 'open hipnc file~!'
+        print('open hipnc file~!')
         hipfile = self.proj + item.data()
         # open hip file
         print hipfile
         hou.hipFile.load(hipfile)
 
     def onCreateInterface(self):
-        print 'creating interface'
+        print('creating interface')
         self.scenelist.clear()
 
         for file in os.listdir(self.proj):
